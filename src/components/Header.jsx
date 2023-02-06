@@ -1,5 +1,5 @@
 const Header = () => (
-  <div className="header">
+  <div className="header bg-dark text-light">
     <div>
       <h1 className="title">Mr. K's Kap Shop</h1>
     </div>

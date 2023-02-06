@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header {
-  background-color: purple;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +23,7 @@ body {
   ul {
     display: flex;
     list-style-type: none;
+    margin: 0;
   }
   li {
     margin: 2rem;
@@ -29,16 +32,28 @@ body {
 
 .main-content {
   flex-grow: 1;
+  display: flex;
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  background-color: green;
+  align-items: center;
   min-height: 5vh;
+  p {
+    margin: 0;
+  }
 }
 
 .hero {
   background-image: url('../images/keycapslg.jpg');
   background-size: cover;
+}
+
+.title {
+  margin-left: 1rem;
+}
+
+.btn {
+  border: none;
 }
