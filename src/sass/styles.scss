@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  li {
+    margin: 2rem;
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  min-height: 5vh;
+}
+
+.hero {
+  background-image: url('../images/keycapslg.jpg');
+  background-size: cover;
+}
