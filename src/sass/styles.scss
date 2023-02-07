@@ -24,6 +24,11 @@ body {
     display: flex;
     list-style-type: none;
     margin: 0;
+    font-size: 1.5em;
+    a {
+      text-decoration: none;
+      color: #f8f9fa;
+    }
   }
   li {
     margin: 2rem;
@@ -33,6 +38,15 @@ body {
 .main-content {
   flex-grow: 1;
   display: flex;
+}
+
+.main-content-shop {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
 }
 
 .footer {
@@ -56,4 +70,19 @@ body {
 
 .btn {
   border: none;
+}
+
+.card-container {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.card-imgs {
+  min-height: 250px;
+  max-width: 100%;
+}
+
+.card-image-container {
+  width: 350px;
+  height: 250px;
 }

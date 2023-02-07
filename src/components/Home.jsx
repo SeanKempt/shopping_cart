@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 import enterkey from '../images/Enterkey-ps.png';
 
 const Home = () => (
@@ -10,14 +12,14 @@ const Home = () => (
         <p className="col-md-8 fs-4 text-light display-3 text-center">
           Quality made Keyboard caps at an affordable price.
         </p>
-        <button type="button" className="btn">
-          <img src={enterkey} className="shopImg" alt="enterkey" />
-        </button>
+        <Link to="/shop">
+          <button type="button" className="btn">
+            <img src={enterkey} className="shopImg" alt="enterkey" />
+          </button>
+        </Link>
       </div>
     </main>
-    <footer className="footer bg-dark text-light">
-      <p>Made by Sean Kempt</p>
-    </footer>
+    <Footer />
   </div>
 );
 
