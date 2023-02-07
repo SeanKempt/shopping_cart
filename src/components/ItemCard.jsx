@@ -17,7 +17,7 @@ const ItemCard = ({ product, img, price }) => (
 ItemCard.propTypes = {
   product: PropTypes.string,
   img: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
 };
 
 export default ItemCard;

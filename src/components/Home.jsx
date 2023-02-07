@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
 import enterkey from '../images/Enterkey-ps.png';
 
 const Home = () => (
   <div className="wrapper">
-    <Header />
     <main className="main-content">
       <div className="hero container-fluid py-5 d-flex flex-column justify-content-center align-items-center">
         <h1 className="text-light display-1">Best Keyboard Caps Around!</h1>
@@ -19,7 +16,6 @@ const Home = () => (
         </Link>
       </div>
     </main>
-    <Footer />
   </div>
 );
 
