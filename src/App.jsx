@@ -8,19 +8,63 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 import Home from './components/Home';
 import Layout from './components/Layout';
-import item1 from './images/keycaps1.jpg'; // remove and replace with proper items.
 
 const App = () => {
-  const [cart, setCart] = useState([
-    { id: 0, product: 'Japanese Key Caps', price: `$${20.99}`, image: item1 }, // remove and leave it as a blank array
-  ]);
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (item) => {
+    // checks if the item is in the cart, if not it gets added
+    const itemExists = cart.some((i) => i.product.id === item.id);
+    if (!itemExists) {
+      return setCart([...cart, { product: item, quantity: 1 }]);
+    }
+    // if the item is already in the cart, increase the quantity of that item by one
+    handleIncrease(item);
+  };
+
+  const handleIncrease = (item) => {
+    const itemIndex = cart.map((i) => i.product).indexOf(item);
+    console.log(itemIndex);
+    const newQuantity = cart.map((p, i) => {
+      if (i === itemIndex) {
+        return { ...p, quantity: p.quantity + 1 };
+      }
+      return p;
+    });
+    return setCart(newQuantity);
+  };
+  const handleDecrease = (item) => {
+    const itemIndex = cart.map((i) => i.product).indexOf(item);
+    console.log(cart);
+    console.log(itemIndex);
+    const newQuantity = cart.map((p, i) => {
+      if (i === itemIndex) {
+        return { ...p, quantity: p.quantity - 1 };
+      }
+      return p;
+    });
+    return setCart(newQuantity);
+  };
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="cart" element={<Cart cart={cart} />} />
+          <Route
+            path="shop"
+            element={<Shop handleAddToCart={handleAddToCart} />}
+          />
+          <Route
+            path="cart"
+            element={
+              <Cart
+                cart={cart}
+                handleDecrease={handleDecrease}
+                handleIncrease={handleIncrease}
+              />
+            }
+          />
         </Route>
       </Routes>
     </div>

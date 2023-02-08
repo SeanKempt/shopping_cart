@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 
-const ItemCartCard = ({ product, img, price }) => (
+const ItemCartCard = ({
+  product,
+  img,
+  price,
+  quantity,
+  item,
+  handleIncrease,
+  handleDecrease,
+}) => (
   <div>
     <div className="card mb-3 cart-card-container">
       <div className="row g-0">
@@ -13,9 +21,13 @@ const ItemCartCard = ({ product, img, price }) => (
             <p className="card-text">{price}</p>
             <div className="card-text">
               <div className="item-incrementor">
-                <button type="button">-</button>
-                <p className="item-quantity">5</p>
-                <button type="button">+</button>
+                <button onClick={() => handleDecrease(item)} type="button">
+                  -
+                </button>
+                <p className="item-quantity">{quantity}</p>
+                <button onClick={() => handleIncrease(item)} type="button">
+                  +
+                </button>
               </div>
             </div>
           </div>
@@ -29,6 +41,10 @@ ItemCartCard.propTypes = {
   product: PropTypes.string,
   img: PropTypes.string,
   price: PropTypes.string,
+  quantity: PropTypes.number,
+  item: PropTypes.object,
+  handleDecrease: PropTypes.func,
+  handleIncrease: PropTypes.func,
 };
 
 export default ItemCartCard;
