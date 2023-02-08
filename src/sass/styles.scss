@@ -77,6 +77,15 @@ body {
   max-height: 400px;
 }
 
+.cart-card-container {
+  max-width: 50%;
+}
+
+.cart-card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-imgs {
   min-height: 250px;
   max-width: 100%;
@@ -85,4 +94,20 @@ body {
 .card-image-container {
   width: 350px;
   height: 250px;
+}
+
+.item-incrementor {
+  p {
+    margin: 0;
+  }
+  button {
+    min-width: 30px;
+  }
+  display: flex;
+  flex-direction: row;
+}
+
+.item-quantity {
+  min-width: 30px;
+  text-align: center;
 }
