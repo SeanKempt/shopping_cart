@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 import ItemCartCard from './ItemCartCard';
 
 const Cart = ({ cart, handleIncrease, handleDecrease }) => (
@@ -20,6 +21,11 @@ const Cart = ({ cart, handleIncrease, handleDecrease }) => (
         />
       ))
     )}
+    <hr />
+    <h2>Total: </h2>
+    <Button className="checkout-btn" type="button">
+      Checkout
+    </Button>
   </div>
 );
 

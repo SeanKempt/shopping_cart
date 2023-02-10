@@ -9,7 +9,7 @@ const ItemCartCard = ({
   handleIncrease,
   handleDecrease,
 }) => (
-  <div>
+  <div className="card-wrapper">
     <div className="card mb-3 cart-card-container">
       <div className="row g-0">
         <div className="col-md-4">

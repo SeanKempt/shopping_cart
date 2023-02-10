@@ -19,6 +19,19 @@ body {
   height: 100vh;
 }
 
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.checkout-btn {
+  width: 20%;
+  align-self: center;
+}
+
 .navbar {
   ul {
     display: flex;

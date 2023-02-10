@@ -24,19 +24,13 @@ const App = () => {
 
   const handleIncrease = (item) => {
     const itemIndex = cart.map((i) => i.product).indexOf(item);
-    console.log(itemIndex);
-    const newQuantity = cart.map((p, i) => {
-      if (i === itemIndex) {
-        return { ...p, quantity: p.quantity + 1 };
-      }
-      return p;
-    });
+    const newQuantity = cart.map((p, i) =>
+      i === itemIndex ? { ...p, quantity: p.quantity + 1 } : p
+    );
     return setCart(newQuantity);
   };
   const handleDecrease = (item) => {
     const itemIndex = cart.map((i) => i.product).indexOf(item);
-    console.log(cart);
-    console.log(itemIndex);
     const newQuantity = cart.map((p, i) => {
       if (i === itemIndex) {
         return { ...p, quantity: p.quantity - 1 };
