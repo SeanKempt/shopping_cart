@@ -8,7 +8,7 @@ const Shop = ({ handleAddToCart }) => (
       {inventory.map((item) => (
         <ItemCard
           item={item}
-          product={item.product}
+          productName={item.productName}
           img={item.image}
           price={item.price}
           key={item.id}

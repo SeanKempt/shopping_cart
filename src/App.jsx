@@ -10,33 +10,39 @@ import Home from './components/Home';
 import Layout from './components/Layout';
 
 const App = () => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({ bag: [], total: 0 });
 
   const handleAddToCart = (item) => {
     // checks if the item is in the cart, if not it gets added
-    const itemExists = cart.some((i) => i.product.id === item.id);
+    const itemExists = cart.bag.some((i) => i.product.id === item.id);
     if (!itemExists) {
-      return setCart([...cart, { product: item, quantity: 1 }]);
+      return setCart({
+        ...cart,
+        bag: [...cart.bag, { product: item, quantity: 1 }],
+      });
     }
     // if the item is already in the cart, increase the quantity of that item by one
     handleIncrease(item);
   };
 
   const handleIncrease = (item) => {
-    const itemIndex = cart.map((i) => i.product).indexOf(item);
-    const newQuantity = cart.map((p, i) =>
-      i === itemIndex ? { ...p, quantity: p.quantity + 1 } : p
-    );
+    const itemIndex = cart.bag.map((i) => i.product).indexOf(item);
+    const newQuantity = {
+      ...cart,
+      bag: cart.bag.map((p, i) =>
+        i === itemIndex ? { ...p, quantity: p.quantity + 1 } : p
+      ),
+    };
     return setCart(newQuantity);
   };
   const handleDecrease = (item) => {
-    const itemIndex = cart.map((i) => i.product).indexOf(item);
-    const newQuantity = cart.map((p, i) => {
-      if (i === itemIndex) {
-        return { ...p, quantity: p.quantity - 1 };
-      }
-      return p;
-    });
+    const itemIndex = cart.bag.map((i) => i.product).indexOf(item);
+    const newQuantity = {
+      ...cart,
+      bag: cart.bag.map((p, i) =>
+        i === itemIndex ? { ...p, quantity: p.quantity - 1 } : p
+      ),
+    };
     return setCart(newQuantity);
   };
 
