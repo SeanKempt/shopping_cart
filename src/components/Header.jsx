@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Header = () => (
+const Header = ({ cartCount }) => (
   <div className="header bg-dark text-light">
     <div>
       <h1 className="title">Mr. K's Kaps</h1>
@@ -16,11 +17,18 @@ const Header = () => (
         <Link to="/cart">
           <li>
             <i className="bi bi-cart2" />
+            <span className="badge badge-warning" id="cart-count">
+              {cartCount}
+            </span>
           </li>
         </Link>
       </ul>
     </nav>
   </div>
 );
+
+Header.propTypes = {
+  cartCount: PropTypes.number,
+};
 
 export default Header;
