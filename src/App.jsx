@@ -13,7 +13,7 @@ const App = () => {
   const [cart, setCart] = useState({ bag: [], total: 0 });
 
   const handleAddToCart = (item) => {
-    // checks if the item is in the cart, if not it gets added
+    // Checks if the item is in the cart, if not it gets added
     const itemExists = cart.bag.some((i) => i.product.id === item.id);
     if (!itemExists) {
       return setCart({
@@ -21,11 +21,11 @@ const App = () => {
         bag: [...cart.bag, { product: item, quantity: 1 }],
       });
     }
-    // if the item is already in the cart, increase the quantity of that item by one
+    // If the item is already in the cart, increase the quantity of that item by one
     handleIncrease(item);
   };
 
-  // each item gets multiplied by the quantity of the item in the cart and then gets added together to give the total value.
+  // Each item gets multiplied by the quantity of the item in the cart and then gets added together to give the total value.
   const getTotal = () => {
     setCart((pendingCart) => {
       const cartTotal = pendingCart.bag
@@ -45,18 +45,24 @@ const App = () => {
     };
     return setCart(newQuantity);
   };
+
+  // This can probably be optimized, may need to find a way to combine what newCart and filtered is doing.
   const handleDecrease = (item) => {
     const itemIndex = cart.bag.map((i) => i.product).indexOf(item);
-    const newQuantity = {
+    const newCart = {
       ...cart,
       bag: cart.bag.map((p, i) =>
         i === itemIndex ? { ...p, quantity: p.quantity - 1 } : p
       ),
     };
-    return setCart(newQuantity);
+    const newCartFiltered = {
+      ...cart,
+      bag: newCart.bag.filter((p) => p.quantity !== 0),
+    };
+    return setCart(newCartFiltered);
   };
 
-  // didn't have to use useEffect. Could've used just the reduce and map to find the cart total.
+  // Did not have to use useEffect. Could've used just the reduce and map to find the cart total.
   useEffect(() => {
     getTotal();
   }, [cart.bag]);

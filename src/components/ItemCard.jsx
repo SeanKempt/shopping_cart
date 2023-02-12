@@ -8,7 +8,7 @@ const ItemCard = ({ productName, img, price, handleAddToCart, item }) => (
     </div>
     <Card.Body>
       <Card.Title>{productName}</Card.Title>
-      <Card.Text>{price}</Card.Text>
+      <Card.Text>${price}</Card.Text>
       <Button onClick={() => handleAddToCart(item)} variant="primary">
         Add to cart
       </Button>

@@ -5,15 +5,15 @@ import ItemCartCard from './ItemCartCard';
 const Cart = ({ cart, handleIncrease, handleDecrease }) => {
   if (cart.bag.length <= 0) {
     return (
-      <div className="wrapper">
-        <h1>Your cart is empty!</h1>
+      <div className="wrapper" id="cart-wrapper">
+        <h1 className="cart-status">Your cart is empty!</h1>
       </div>
     );
   }
   return (
     <div className="wrapper">
       {cart.bag.map((item) => (
-        // have to use item.property because of how object is stored within the cart array [{product, quantity}]
+        // Have to use item.property because of how object is stored within the cart array [{product, quantity}]
         <ItemCartCard
           key={item.product.id}
           productName={item.product.productName}
@@ -26,7 +26,7 @@ const Cart = ({ cart, handleIncrease, handleDecrease }) => {
         />
       ))}
       <hr />
-      <h2>Total: {cart.total} </h2>
+      <h2 id="cart-total">Total: ${cart.total} </h2>
       <Button className="checkout-btn" type="button">
         Checkout
       </Button>

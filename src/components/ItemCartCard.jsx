@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+// This component is used for the Cart component only. Different from ItemCard.
+
 const ItemCartCard = ({
   productName,
   img,
@@ -22,7 +24,7 @@ const ItemCartCard = ({
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{productName}</h5>
-            <p className="card-text">{price}</p>
+            <p className="card-text">${price}</p>
             <div className="card-text">
               <div className="item-incrementor">
                 <button onClick={() => handleDecrease(item)} type="button">
