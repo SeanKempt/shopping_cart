@@ -19,7 +19,7 @@ const ItemCard = ({ productName, img, price, handleAddToCart, item }) => (
 ItemCard.propTypes = {
   productName: PropTypes.string,
   img: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   handleAddToCart: PropTypes.func,
   item: PropTypes.object,
 };

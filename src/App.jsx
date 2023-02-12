@@ -3,7 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './sass/styles.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
 import Home from './components/Home';
@@ -23,6 +23,16 @@ const App = () => {
     }
     // if the item is already in the cart, increase the quantity of that item by one
     handleIncrease(item);
+  };
+
+  // each item gets multiplied by the quantity of the item in the cart and then gets added together to give the total value.
+  const getTotal = () => {
+    setCart((pendingCart) => {
+      const cartTotal = pendingCart.bag
+        .map((item) => item.product.price * item.quantity)
+        .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      return { ...pendingCart, total: cartTotal };
+    });
   };
 
   const handleIncrease = (item) => {
@@ -45,6 +55,11 @@ const App = () => {
     };
     return setCart(newQuantity);
   };
+
+  // didn't have to use useEffect. Could've used just the reduce and map to find the cart total.
+  useEffect(() => {
+    getTotal();
+  }, [cart.bag]);
 
   return (
     <div className="App">

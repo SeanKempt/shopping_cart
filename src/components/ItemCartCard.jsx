@@ -44,7 +44,7 @@ const ItemCartCard = ({
 ItemCartCard.propTypes = {
   productName: PropTypes.string,
   img: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   quantity: PropTypes.number,
   item: PropTypes.object,
   handleDecrease: PropTypes.func,

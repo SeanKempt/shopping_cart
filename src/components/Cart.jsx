@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ItemCartCard from './ItemCartCard';
 
 const Cart = ({ cart, handleIncrease, handleDecrease }) => {
-  if (cart.length <= 0) {
+  if (cart.bag.length <= 0) {
     return (
       <div className="wrapper">
         <h1>Your cart is empty!</h1>
@@ -26,7 +26,7 @@ const Cart = ({ cart, handleIncrease, handleDecrease }) => {
         />
       ))}
       <hr />
-      <h2>Total: </h2>
+      <h2>Total: {cart.total} </h2>
       <Button className="checkout-btn" type="button">
         Checkout
       </Button>
