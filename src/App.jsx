@@ -31,7 +31,10 @@ const App = () => {
       const cartTotal = pendingCart.bag
         .map((item) => item.product.price * item.quantity)
         .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-      return { ...pendingCart, total: cartTotal };
+      return {
+        ...pendingCart,
+        total: (Math.round(cartTotal * 100) / 100).toFixed(2), // this makes it so that we round the total and only provide two decimal places. To fixed allows it to show zero on numbers like 10, 20, etc.
+      };
     });
   };
 
