@@ -12,7 +12,7 @@ const ItemCartCard = ({
   handleDecrease,
 }) => (
   <div className="card-wrapper">
-    <div className="card mb-3 cart-card-container">
+    <main className="card mb-3 cart-card-container">
       <div className="row g-0">
         <div className="col-md-4">
           <img
@@ -27,11 +27,21 @@ const ItemCartCard = ({
             <p className="card-text">${price}</p>
             <div className="card-text">
               <div className="item-incrementor">
-                <button onClick={() => handleDecrease(item)} type="button">
+                <button
+                  name="decrease-button"
+                  onClick={() => handleDecrease(item)}
+                  type="button"
+                >
                   -
                 </button>
-                <p className="item-quantity">{quantity}</p>
-                <button onClick={() => handleIncrease(item)} type="button">
+                <p data-testid="item-quantity" className="item-quantity">
+                  {quantity}
+                </p>
+                <button
+                  name="increase-button"
+                  onClick={() => handleIncrease(item)}
+                  type="button"
+                >
                   +
                 </button>
               </div>
@@ -39,7 +49,7 @@ const ItemCartCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </div>
 );
 

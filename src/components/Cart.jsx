@@ -26,7 +26,7 @@ const Cart = ({ cart, handleIncrease, handleDecrease }) => {
         />
       ))}
       <hr />
-      <h2 id="cart-total">Total: ${cart.total} </h2>
+      <p id="cart-total">Total: ${cart.total}</p>
       <Button className="checkout-btn" type="button">
         Checkout
       </Button>
