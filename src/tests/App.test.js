@@ -31,7 +31,7 @@ describe('Cart component functionality', () => {
     total: 20.99,
   };
 
-  const handleIncrease = jest.fn((cart.bag[0].quantity += 1));
+  const handleIncrease = jest.fn(() => (cart.bag[0].quantity += 1));
   const handleDecrease = jest.fn();
 
   it('renders cart correctly', () => {
