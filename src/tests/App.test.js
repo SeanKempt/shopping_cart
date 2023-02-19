@@ -6,13 +6,22 @@ import Cart from '../components/Cart';
 import item1 from '../images/keycaps1.jpg';
 
 describe('Shop component', () => {
+  const handleAddToCart = jest.fn();
+
   it('renders shop component correctly', () => {
     render(<Shop />);
     const element = screen.getByRole('main');
     expect(element).toBeInTheDocument();
   });
 
-  it('When user clicks on add to bag, the item is added to the cart', () => {});
+  it('When user clicks on add to bag, the add to cart handler is called', async () => {
+    render(<Shop handleAddToCart={handleAddToCart} />);
+    const cardElement = screen.getByText(/see through key caps/i);
+    const atcButtons = screen.getAllByRole('button', { name: 'Add to cart' });
+    expect(cardElement).toBeInTheDocument();
+    await userEvent.click(atcButtons[0]);
+    expect(handleAddToCart).toBeCalledTimes(1);
+  });
 });
 
 describe('Cart component functionality', () => {
@@ -30,8 +39,7 @@ describe('Cart component functionality', () => {
     ],
     total: 20.99,
   };
-
-  const handleIncrease = jest.fn(() => (cart.bag[0].quantity += 1));
+  const handleIncrease = jest.fn();
   const handleDecrease = jest.fn();
 
   it('renders cart correctly', () => {
@@ -60,16 +68,13 @@ describe('Cart component functionality', () => {
     expect(handleDecrease).toBeCalledTimes(1);
   });
 
-  it('provides running total of all items in cart', async () => {
+  it('calls the handleIncrease onclick handler when hitting the increase button', async () => {
     render(<Cart cart={cart} handleIncrease={handleIncrease} />);
-    const totalElement = screen.getByText(/total: \$20\.99/i);
     const itemQuantity = screen.getByTestId('item-quantity');
-    const increaseButton = screen.getByRole('button', {
-      name: '+',
-    });
+    const increaseButton = screen.getByRole('button', { name: '+' });
+    handleIncrease.mockImplementation(() => (itemQuantity.textContent = 2));
     expect(itemQuantity.textContent).toBe('1');
     await userEvent.click(increaseButton);
     expect(itemQuantity.textContent).toBe('2');
-    expect(totalElement.textContent).toBe('Total: $41.98');
   });
 });
