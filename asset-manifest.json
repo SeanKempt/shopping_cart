@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping_cart/static/css/main.b2140de6.css",
-    "main.js": "/shopping_cart/static/js/main.6b945bea.js",
+    "main.js": "/shopping_cart/static/js/main.1d18493c.js",
     "static/media/happycatkeycaps.jpg": "/shopping_cart/static/media/happycatkeycaps.a95d4ff38f34a15652f9.jpg",
     "static/media/keycaps1.jpg": "/shopping_cart/static/media/keycaps1.e5094b63d7b241556e24.jpg",
     "static/media/keycapslg.jpg": "/shopping_cart/static/media/keycapslg.7e2d7dfd67e1a99eb0d3.jpg",
@@ -11,10 +11,10 @@
     "static/media/Enterkey-ps.png": "/shopping_cart/static/media/Enterkey-ps.444823ab24f997896f09.png",
     "index.html": "/shopping_cart/index.html",
     "main.b2140de6.css.map": "/shopping_cart/static/css/main.b2140de6.css.map",
-    "main.6b945bea.js.map": "/shopping_cart/static/js/main.6b945bea.js.map"
+    "main.1d18493c.js.map": "/shopping_cart/static/js/main.1d18493c.js.map"
   },
   "entrypoints": [
     "static/css/main.b2140de6.css",
-    "static/js/main.6b945bea.js"
+    "static/js/main.1d18493c.js"
   ]
 }
