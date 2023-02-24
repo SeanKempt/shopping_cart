@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/shopping_cart/static/css/main.b2140de6.css",
+    "main.js": "/shopping_cart/static/js/main.2d6d3586.js",
+    "static/media/happycatkeycaps.jpg": "/shopping_cart/static/media/happycatkeycaps.a95d4ff38f34a15652f9.jpg",
+    "static/media/keycaps1.jpg": "/shopping_cart/static/media/keycaps1.e5094b63d7b241556e24.jpg",
+    "static/media/keycapslg.jpg": "/shopping_cart/static/media/keycapslg.7e2d7dfd67e1a99eb0d3.jpg",
+    "static/media/seethroughkeycaps.jpg": "/shopping_cart/static/media/seethroughkeycaps.ac93e3ece2187309ca38.jpg",
+    "static/media/bootstrap-icons.woff?": "/shopping_cart/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
+    "static/media/bootstrap-icons.woff2?": "/shopping_cart/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
+    "static/media/Enterkey-ps.png": "/shopping_cart/static/media/Enterkey-ps.444823ab24f997896f09.png",
+    "index.html": "/shopping_cart/index.html",
+    "main.b2140de6.css.map": "/shopping_cart/static/css/main.b2140de6.css.map",
+    "main.2d6d3586.js.map": "/shopping_cart/static/js/main.2d6d3586.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2140de6.css",
+    "static/js/main.2d6d3586.js"
+  ]
+}
